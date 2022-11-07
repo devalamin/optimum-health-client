@@ -25,8 +25,8 @@ const Header = () => {
                         {menuItems}
                     </ul>
                 </div>
-                <div className="navbar-end">
-                    <Link className="sm:btn sm:btn-info btn-link">Appointment</Link>
+                <div className="navbar-end text-center">
+                    <Link className="sm:btn sm:btn-info btn-link sm:mt-0 sm:mr-0 mr-10 mt-20">Appointment</Link>
                 </div>
             </div>
         </div>
