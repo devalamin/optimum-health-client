@@ -3,8 +3,8 @@ import { FaHospitalUser } from "react-icons/fa";
 
 const Footer = () => {
     return (
-        <div>
-            <footer className="footer items-center p-4 bg-teal-800 text-neutral-content">
+        <div className=''>
+            <footer className="footer items-center py-10 p-4 bg-teal-800 text-neutral-content">
                 <div className="items-center grid-flow-col">
                     <FaHospitalUser className='text-2xl font-bold'></FaHospitalUser>
                     <p>Copyright © 2022 - All right reserved <span className='sm:text-xl sm:font-bold text-cyan-200'>DR.Daniel Day Lewis</span></p>

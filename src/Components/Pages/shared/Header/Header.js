@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 const Header = () => {
 
     const menuItems = <>
-        <Link to='/login'><li>Login</li></Link>
+        <Link className='text-black btn-link no-underline font-bold text-xl' to='/login'><li>Login</li></Link>
     </>
     return (
-        <div>
-            <div className="navbar bg-base-100">
+        <div className=''>
+            <div className="navbar py-5 bg-gradient-to-r from-cyan-500 to-slate-500">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -18,7 +18,7 @@ const Header = () => {
                             {menuItems}
                         </ul>
                     </div>
-                    <Link className="btn btn-ghost normal-case text-xl font-bold">DR.Daniel</Link>
+                    <Link className="btn btn-ghost bg-teal-300 normal-case text-xl font-bold">DR.Daniel</Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal p-0">
