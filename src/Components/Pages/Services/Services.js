@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import SingleService from './SingleService';
 
 const Services = () => {
@@ -13,14 +14,20 @@ const Services = () => {
     }, [])
 
     return (
-        <div className='grid sm:grid-cols-3 grid-cols-1 sm:gap-10 gap-3 sm:my-10 my-4'>
-            {
-                services.map(service => <SingleService
-                    key={service._id}
-                    service={service}
-                ></SingleService>)
-            }
+        <div>
+            <div className='grid sm:grid-cols-3 grid-cols-1 sm:gap-10 gap-3 sm:my-10 my-4'>
+                {
+                    services.map(service => <SingleService
+                        key={service._id}
+                        service={service}
+                    ></SingleService>)
+                }
 
+
+            </div>
+            <div className='text-center my-4 '>
+                <Link to='/allservices' className=''><button className="bg-teal-900 btn btn-wide">All Services</button></Link>
+            </div>
         </div>
     );
 };
