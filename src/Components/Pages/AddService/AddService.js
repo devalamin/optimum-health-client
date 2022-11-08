@@ -75,7 +75,7 @@ const AddService = () => {
 
                             </div>
                             <div className="form-control mt-6">
-                                <button type='submit' className="btn btn-primary">Add Service</button>
+                                <button type='submit' className="btn btn-primary border-0 bg-gradient-to-r from-slate-400 to-cyan-900">Add Service</button>
                             </div>
                         </form>
                     </div>
