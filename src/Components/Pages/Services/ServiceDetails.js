@@ -69,7 +69,11 @@ const ServiceDetails = () => {
             </div>
             <div>
                 {
-                    user?.uid ? <ReviewForm></ReviewForm>
+                    user?.uid ? <ReviewForm
+                        service_name={service_name}
+                        id={_id}
+
+                    ></ReviewForm>
                         :
                         <span>Please <Link to='/login' className='btn btn-link'>log in</Link> to submit your review </span>
                 }
