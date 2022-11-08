@@ -47,7 +47,7 @@ const ServiceDetails = () => {
                                     <th>Name</th>
                                     <th>Comments</th>
                                     <th>Phone</th>
-                                    <th></th>
+                                    <th>Email</th>
                                 </tr>
                             </thead>
                             <tbody>

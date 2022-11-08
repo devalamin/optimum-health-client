@@ -14,6 +14,7 @@ const ReviewForm = ({ service_name, id }) => {
         const name = form.name.value;
         const email = user?.email || "Unauthorized"
         const image = form.photoLink.value;
+        const phone = form.phone.value;
         const comment = form.comments.value;
         console.log(name, email, image, comment);
 
@@ -23,7 +24,8 @@ const ReviewForm = ({ service_name, id }) => {
             user_name: name,
             email: email,
             review: comment,
-            img: image
+            img: image,
+            phone: phone
         }
 
         fetch('http://localhost:5000/reviews', {
@@ -39,7 +41,6 @@ const ReviewForm = ({ service_name, id }) => {
                 console.log(data)
                 if (data.acknowledged) {
                     toast.success('Review Submitted')
-
                 }
             })
             .catch(error => console.error(error))
@@ -66,6 +67,12 @@ const ReviewForm = ({ service_name, id }) => {
                                     <span className="label-text">Your Email</span>
                                 </label>
                                 <input name='email' type="email" placeholder="email" className="input input-bordered" defaultValue={user?.email} readOnly />
+                            </div>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Your Phone</span>
+                                </label>
+                                <input name='phone' type="text" placeholder="phone" className="input input-bordered" />
                             </div>
 
                             <div className="form-control">
