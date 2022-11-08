@@ -2,6 +2,7 @@ import React from 'react';
 import { RiDeleteBin6Fill } from 'react-icons/ri';
 import { MdModeEditOutline } from 'react-icons/md';
 import { toast, ToastContainer } from 'react-toastify';
+import { Link } from 'react-router-dom';
 
 
 const MyReviewRow = ({ singleReview, handleDelete }) => {
@@ -13,7 +14,7 @@ const MyReviewRow = ({ singleReview, handleDelete }) => {
             <th>
                 <div className='flex'>
                     <button onClick={() => handleDelete(_id)}> <RiDeleteBin6Fill className='mr-4 cursor-pointer border-2 text-black text-2xl'></RiDeleteBin6Fill></button>
-                    <button><MdModeEditOutline className='cursor-pointer border-2 text-black text-2xl'></MdModeEditOutline></button>
+                    <Link to={`/singlereviews/${_id}`}><button><MdModeEditOutline className='cursor-pointer border-2 text-black text-2xl'></MdModeEditOutline></button></Link>
 
                 </div>
 

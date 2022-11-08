@@ -29,10 +29,6 @@ const Header = () => {
 
     </>
 
-
-
-
-
     return (
         <div className=''>
             <div className="navbar py-5 bg-gradient-to-r from-cyan-500 to-slate-500">
@@ -52,7 +48,7 @@ const Header = () => {
                         {menuItems}
                     </ul>
                 </div>
-                <div className="navbar-end text-center">
+                <div className="navbar-end text-center flex flex-col sm:flex-row">
                     <span className='font-bold mr-4'>{user?.email}</span>
                     <Link className="sm:btn sm:btn-info btn-link sm:mt-0 sm:mr-0 mr-10 mt-20">Appointment</Link>
                 </div>
