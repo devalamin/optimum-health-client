@@ -14,7 +14,7 @@ const MyReviewRow = ({ singleReview, handleDelete }) => {
             <th>
                 <div className='flex'>
                     <button onClick={() => handleDelete(_id)}> <RiDeleteBin6Fill className='mr-4 cursor-pointer border-2 text-black text-2xl'></RiDeleteBin6Fill></button>
-                    <Link to={`/singlereviews/${_id}`}><button><MdModeEditOutline className='cursor-pointer border-2 text-black text-2xl'></MdModeEditOutline></button></Link>
+                    <Link to={`/update/${_id}`}><button><MdModeEditOutline className='cursor-pointer border-2 text-black text-2xl'></MdModeEditOutline></button></Link>
 
                 </div>
 

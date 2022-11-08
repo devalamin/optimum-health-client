@@ -41,6 +41,7 @@ const ReviewForm = ({ service_name, id }) => {
                 console.log(data)
                 if (data.acknowledged) {
                     toast.success('Review Submitted')
+                    form.reset()
                 }
             })
             .catch(error => console.error(error))
