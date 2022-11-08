@@ -40,38 +40,46 @@ const MyReview = () => {
 
 
     return (
-        <div className='my-10'>
-            <div className="overflow-x-auto w-full">
-                <table className="table w-full">
-                    <thead>
-                        <tr>
-                            <th>
-                                <label>
+        <div>
+            {
+                emailReview.length === 0 ? <div className='flex items-center justify-center sm:h-96 h-10'><span className='text-3xl font-bold text-teal-900'>You Have No Review</span></div>
+                    :
+                    <div className='my-10'>
+                        <div className="overflow-x-auto w-full">
+                            <table className="table w-full">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            <label>
 
-                                </label>
-                            </th>
-                            <th>Name</th>
-                            <th>Service Name</th>
-                            <th>Comment</th>
-                            <th>Phone</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <ToastContainer></ToastContainer>
-                        {
-                            emailReview.map(singleReview => <MyReviewRow
-                                key={singleReview._id}
-                                singleReview={singleReview}
-                                handleDelete={handleDelete}
+                                            </label>
+                                        </th>
+                                        <th>Name</th>
+                                        <th>Service Name</th>
+                                        <th>Comment</th>
+                                        <th>Phone</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <ToastContainer></ToastContainer>
+                                    {
+                                        emailReview.map(singleReview => <MyReviewRow
+                                            key={singleReview._id}
+                                            singleReview={singleReview}
+                                            handleDelete={handleDelete}
 
-                            ></MyReviewRow>)
-                        }
-                    </tbody>
+                                        ></MyReviewRow>)
+                                    }
+                                </tbody>
 
 
 
-                </table>
-            </div>
+                            </table>
+                        </div>
+
+                    </div>
+
+            }
 
         </div>
     );
