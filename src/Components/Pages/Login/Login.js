@@ -30,7 +30,11 @@ const Login = () => {
     }
     const handleGoogleLogin = () => {
         userGoogleLogin(googleProvider)
-            .then(result => console.log(result.user))
+            .then(result => {
+                console.log(result.user)
+                navigate(from, { replace: true })
+
+            })
             .catch(error => console.error(error))
     }
 
