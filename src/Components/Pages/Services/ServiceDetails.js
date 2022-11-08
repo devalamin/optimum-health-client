@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider';
+import ReviewForm from '../ReviewForm/ReviewForm';
 import ReviewRow from './UserReview/ReviewRow';
 
 const ServiceDetails = () => {
@@ -35,6 +36,7 @@ const ServiceDetails = () => {
             <div className='my-10'>
                 <h1 className='my-5 text-center text-2xl font-bold text-teal-900'>User's reviews-</h1>
 
+
                 <div>
                     <div className="overflow-x-auto w-full">
                         <table className="table w-full">
@@ -64,6 +66,13 @@ const ServiceDetails = () => {
                         </table>
                     </div>
                 </div>
+            </div>
+            <div>
+                {
+                    user?.uid ? <ReviewForm></ReviewForm>
+                        :
+                        <span>Please <Link to='/login' className='btn btn-link'>log in</Link> to submit your review </span>
+                }
             </div>
         </div>
     );

@@ -18,7 +18,12 @@ const Header = () => {
                 <button className='font-bold btn-outline mr-2 px-4 py-1'><Link className=''>Add Service</Link></button>
                 <button onClick={handleLogOut} className='font-bold btn-outline mr-2 px-4 py-1'><Link className=''>Logout</Link></button>
 
-            </div> : <Link className='text-black btn-link no-underline font-bold text-xl' to='/login'><li>Login</li></Link>
+            </div>
+                :
+                <div className='flex sm:flex-row flex-col'>
+                    <Link className='mx-4 text-black btn-link no-underline font-bold text-xl' to='/login'><li>Login</li></Link>
+                    <Link className='text-black btn-link no-underline font-bold text-xl' to='/allservices'><li>Services</li></Link>
+                </div>
         }
 
     </>
