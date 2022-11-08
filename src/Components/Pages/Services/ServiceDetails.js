@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
+import { AuthContext } from '../../../contexts/AuthProvider';
 import ReviewRow from './UserReview/ReviewRow';
 
 const ServiceDetails = () => {
-
+    const { user } = useContext(AuthContext)
     const [reviews, setReviews] = useState([])
     const { service_name, price, description, _id, img } = useLoaderData();
 

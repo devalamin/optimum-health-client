@@ -3,12 +3,30 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../../contexts/AuthProvider';
 
 const Header = () => {
-    const { user } = useContext(AuthContext);
+    const { user, userLogOut } = useContext(AuthContext);
+    const handleLogOut = () => {
+        userLogOut()
+            .then(result => console.log(result.user))
+            .catch(error => console.error(error))
+    };
 
     const menuItems = <>
+        {
+            user?.uid ? <div>
+                <button className='font-bold btn-outline mr-2 px-4 py-1'><Link to='/' className=''>Home</Link></button>
+                <button className='font-bold btn-outline mr-2 px-4 py-1'><Link className=''>My Reviews</Link></button>
+                <button className='font-bold btn-outline mr-2 px-4 py-1'><Link className=''>Add Service</Link></button>
+                <button onClick={handleLogOut} className='font-bold btn-outline mr-2 px-4 py-1'><Link className=''>Logout</Link></button>
 
-        <Link className='text-black btn-link no-underline font-bold text-xl' to='/login'><li>Login</li></Link>
+            </div> : <Link className='text-black btn-link no-underline font-bold text-xl' to='/login'><li>Login</li></Link>
+        }
+
     </>
+
+
+
+
+
     return (
         <div className=''>
             <div className="navbar py-5 bg-gradient-to-r from-cyan-500 to-slate-500">
@@ -29,6 +47,7 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className="navbar-end text-center">
+                    <span className='font-bold mr-4'>{user?.email}</span>
                     <Link className="sm:btn sm:btn-info btn-link sm:mt-0 sm:mr-0 mr-10 mt-20">Appointment</Link>
                 </div>
             </div>
