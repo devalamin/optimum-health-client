@@ -23,7 +23,7 @@ const ReviewRow = ({ singleReview }) => {
                 <br />
 
             </td>
-            <td>{phone}</td>
+            <td>{phone ? phone : 'N/A'}</td>
             <th>
                 <button className="btn btn-ghost lowercase btn-xs">{email}</button>
             </th>

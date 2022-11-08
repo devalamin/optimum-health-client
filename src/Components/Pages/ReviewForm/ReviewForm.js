@@ -84,7 +84,7 @@ const ReviewForm = ({ service_name, id }) => {
                                 <label className="label">
                                     <span className="label-text">Your Comment</span>
                                 </label>
-                                <textarea name='comments' className="textarea textarea-accent" placeholder="Bio"></textarea>
+                                <textarea name='comments' className="textarea textarea-accent" placeholder="Your Comment Here"></textarea>
 
                             </div>
                             <div className="form-control mt-6">

@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
+import { toast, ToastContainer } from 'react-toastify';
 import { AuthContext } from '../../../contexts/AuthProvider';
 import MyReviewRow from './MyReviewRow';
 
@@ -15,12 +16,31 @@ const MyReview = () => {
                 console.log(data);
             })
 
-    }, [user?.email])
+    }, [user?.email]);
+
+    const handleDelete = id => {
+        const confirmation = window.confirm('Remove This Review?')
+        if (confirmation) {
+            fetch(`http://localhost:5000/reviews/${id}`, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount > 0) {
+                        toast.success('Successfully Deleted')
+                        const remaining = emailReview.filter(rvew => rvew._id !== id);
+                        setEmailReview(remaining)
+                    }
+                    console.log(data);
+                })
+        }
+
+    }
 
 
 
     return (
-        <div>
+        <div className='my-10'>
             <div className="overflow-x-auto w-full">
                 <table className="table w-full">
                     <thead>
@@ -37,10 +57,12 @@ const MyReview = () => {
                         </tr>
                     </thead>
                     <tbody>
+                        <ToastContainer></ToastContainer>
                         {
                             emailReview.map(singleReview => <MyReviewRow
                                 key={singleReview._id}
                                 singleReview={singleReview}
+                                handleDelete={handleDelete}
 
                             ></MyReviewRow>)
                         }

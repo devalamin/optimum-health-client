@@ -1,24 +1,29 @@
 import React from 'react';
+import { RiDeleteBin6Fill } from 'react-icons/ri';
+import { MdModeEditOutline } from 'react-icons/md';
+import { toast, ToastContainer } from 'react-toastify';
 
-const MyReviewRow = ({ singleReview }) => {
-    const { service_name, user_name, review, img, phone } = singleReview;
+
+const MyReviewRow = ({ singleReview, handleDelete }) => {
+    const { service_name, user_name, review, img, phone, _id } = singleReview;
 
 
     return (
         <tr>
             <th>
-                <label>
-                    <input type="checkbox" className="checkbox" />
-                </label>
-                <label>
-                    <input type="checkbox" className=" mx-5 checkbox" />
-                </label>
+                <div className='flex'>
+                    <button onClick={() => handleDelete(_id)}> <RiDeleteBin6Fill className='mr-4 cursor-pointer border-2 text-black text-2xl'></RiDeleteBin6Fill></button>
+                    <button><MdModeEditOutline className='cursor-pointer border-2 text-black text-2xl'></MdModeEditOutline></button>
+
+                </div>
+
             </th>
+
             <td>
                 <div className="flex items-center space-x-3">
                     <div className="avatar">
-                        <div className="mask mask-squircle w-12 h-12">
-                            <img src={img} alt="Avatar Tailwind CSS Component" />
+                        <div className="mask w-12 h-12">
+                            <img className='rounded-full' src={img} alt="Avatar Tailwind CSS Component" />
                         </div>
                     </div>
                     <div>
@@ -32,7 +37,7 @@ const MyReviewRow = ({ singleReview }) => {
             </td>
             <td>{review}</td>
             <th>
-                <button className="btn btn-ghost btn-xs">{phone}</button>
+                <button className="btn btn-ghost btn-xs">{phone ? phone : 'N/A'}</button>
             </th>
         </tr>
     );
