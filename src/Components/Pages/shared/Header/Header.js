@@ -41,15 +41,15 @@ const Header = () => {
                             {menuItems}
                         </ul>
                     </div>
-                    <Link className="btn btn-ghost bg-teal-300 normal-case text-xl font-bold">DR.Daniel</Link>
+                    <Link className="p-1 sm:btn-ghost bg-teal-300 normal-case sm:text-xl sm:font-bold">DR.Daniel</Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal p-0">
                         {menuItems}
                     </ul>
                 </div>
-                <div className="navbar-end text-center flex flex-col sm:flex-row">
-                    <span className='font-bold mr-4'>{user?.email}</span>
+                <div className="navbar-end text-start flex flex-col sm:flex-row">
+                    <span className='sm:font-bold mr-4'>{user?.email}</span>
                     <Link className="sm:btn sm:btn-info btn-link sm:mt-0 sm:mr-0 mr-10 mt-20">Appointment</Link>
                 </div>
             </div>
