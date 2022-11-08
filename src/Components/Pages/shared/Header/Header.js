@@ -15,7 +15,7 @@ const Header = () => {
             user?.uid ? <div>
                 <button className='font-bold btn-outline mr-2 px-4 py-1'><Link to='/' className=''>Home</Link></button>
                 <button className='font-bold btn-outline mr-2 px-4 py-1'><Link to='/myreviews' className=''>My Reviews</Link></button>
-                <button className='font-bold btn-outline mr-2 px-4 py-1'><Link className=''>Add Service</Link></button>
+                <button className='font-bold btn-outline mr-2 px-4 py-1'><Link to='/addingservice' className=''>Add Service</Link></button>
                 <button onClick={handleLogOut} className='font-bold btn-outline mr-2 px-4 py-1'><Link className=''>Logout</Link></button>
 
             </div>

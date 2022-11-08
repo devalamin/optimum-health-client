@@ -51,9 +51,9 @@ const ReviewForm = ({ service_name, id }) => {
 
 
     return (
-        <div className=''>
-            <div className="">
-                <div className="">
+        <div>
+            <div>
+                <div>
                     <ToastContainer />
                     <div className="flex-shrink-0 border-2 w-full">
                         <form onSubmit={handleGiveReview} className="card-body">
