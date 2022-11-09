@@ -27,7 +27,7 @@ const Login = () => {
                 }
 
                 // get JWT Token
-                fetch('http://localhost:5000/jwt', {
+                fetch('https://optimum-health-server.vercel.app/jwt', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

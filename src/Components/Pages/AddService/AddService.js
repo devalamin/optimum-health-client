@@ -18,7 +18,7 @@ const AddService = () => {
             description: description
         }
 
-        fetch('http://localhost:5000/services', {
+        fetch('https://optimum-health-server.vercel.app/services', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

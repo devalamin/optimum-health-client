@@ -11,7 +11,7 @@ const ServiceDetails = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews?service_name=${service_name}`)
+        fetch(`https://optimum-health-server.vercel.app/reviews?service_name=${service_name}`)
             .then(res => res.json())
             .then(data => {
                 setReviews(data)

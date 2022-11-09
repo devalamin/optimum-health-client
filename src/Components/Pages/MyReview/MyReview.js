@@ -9,7 +9,7 @@ const MyReview = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviewsbyemail?email=${user?.email}`, {
+        fetch(`https://optimum-health-server.vercel.app/reviewsbyemail?email=${user?.email}`, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('optimumToken')}`
             }
@@ -31,7 +31,7 @@ const MyReview = () => {
     const handleDelete = id => {
         const confirmation = window.confirm('Remove This Review?')
         if (confirmation) {
-            fetch(`http://localhost:5000/reviews/${id}`, {
+            fetch(`https://optimum-health-server.vercel.app/reviews/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

@@ -21,7 +21,7 @@ const UpdateReview = () => {
         const form = event.target;
         const comment = form.comment.value;
 
-        fetch(`http://localhost:5000/reviews/${_id}`, {
+        fetch(`https://optimum-health-server.vercel.app/reviews/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
