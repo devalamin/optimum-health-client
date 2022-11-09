@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import SingleService from './SingleService';
+// import 'react-photo-view/dist/react-photo-view.css';
 
 const Services = () => {
     const [services, setServices] = useState([])
