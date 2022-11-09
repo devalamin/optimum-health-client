@@ -9,16 +9,10 @@ const SingleService = ({ service }) => {
     return (
         <div>
 
-            {/* <PhotoProvider>
-                <div>
-                    <PhotoView src={img}>
-                        <button>click</button>
-                    </PhotoView>
-                </div>
-            </PhotoProvider> */}
+
             <div className="card bg-cyan-200">
                 <figure className="sm:px-0 sm:pt-5">
-                    {/* <PhotoView></PhotoView> */}
+
                     <PhotoProvider>
                         <div>
                             <PhotoView src={img}>

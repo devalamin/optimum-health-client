@@ -14,7 +14,7 @@ const UpdateReview = () => {
         newReview[field] = value;
         setUpdateReview(newReview)
     }
-    console.log(updateReview);
+
 
     const handleUpdate = event => {
         event.preventDefault()
@@ -34,7 +34,7 @@ const UpdateReview = () => {
                     toast.success('Successfully Updated Review')
                     form.reset()
                 }
-                console.log(data);
+
             })
 
     }

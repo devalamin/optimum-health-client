@@ -4,19 +4,29 @@ import { AuthContext } from '../../../contexts/AuthProvider';
 import MyReviewRow from './MyReviewRow';
 
 const MyReview = () => {
-    const { user } = useContext(AuthContext);
+    const { user, userLogOut } = useContext(AuthContext);
     const [emailReview, setEmailReview] = useState([])
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviewsbyemail?email=${user?.email}`)
-            .then(res => res.json())
+        fetch(`http://localhost:5000/reviewsbyemail?email=${user?.email}`, {
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('optimumToken')}`
+            }
+        })
+            .then(res => {
+                if (res.status === 401 || res.status === 403) {
+                    userLogOut()
+
+                }
+                return res.json()
+            })
             .then(data => {
                 setEmailReview(data)
-                console.log(data);
+
             })
 
-    }, [user?.email]);
+    }, [user?.email, userLogOut]);
 
     const handleDelete = id => {
         const confirmation = window.confirm('Remove This Review?')
@@ -31,7 +41,7 @@ const MyReview = () => {
                         const remaining = emailReview.filter(rvew => rvew._id !== id);
                         setEmailReview(remaining)
                     }
-                    console.log(data);
+
                 })
         }
 

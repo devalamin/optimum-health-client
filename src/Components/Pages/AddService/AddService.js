@@ -11,9 +11,6 @@ const AddService = () => {
         const price = form.price.value;
         const description = form.description.value;
 
-        console.log(service_name, image, description, price);
-
-
         const newService = {
             service_name: service_name,
             price: price,
@@ -34,7 +31,7 @@ const AddService = () => {
                     toast.success('New Service Added')
                     form.reset()
                 }
-                console.log(data)
+
             })
 
     }

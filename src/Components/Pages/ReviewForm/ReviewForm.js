@@ -4,7 +4,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const ReviewForm = ({ service_name, id }) => {
-    console.log(service_name, id);
+
     const { user } = useContext(AuthContext);
 
 
@@ -16,7 +16,7 @@ const ReviewForm = ({ service_name, id }) => {
         const image = form.photoLink.value;
         const phone = form.phone.value;
         const comment = form.comments.value;
-        console.log(name, email, image, comment);
+
 
         const reviewGiven = {
             service_name: service_name,
@@ -38,7 +38,7 @@ const ReviewForm = ({ service_name, id }) => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+
                 if (data.acknowledged) {
                     toast.success('Review Submitted')
                     form.reset()

@@ -19,19 +19,39 @@ const Login = () => {
         const password = form.password.value;
         userLogin(email, password)
             .then(result => {
-                const user = result.user
-                console.log(user);
+                const user = result.user;
+
+
+                const currentUser = {
+                    email: user.email
+                }
+
+                // get JWT Token
+                fetch('http://localhost:5000/jwt', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(currentUser)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        localStorage.setItem('optimumToken', data.token)
+
+                        navigate(from, { replace: true })
+                    })
+
+
                 form.reset()
-                navigate(from, { replace: true })
             })
             .catch(err => console.error(err))
-        console.log(email, password);
+
 
     }
     const handleGoogleLogin = () => {
         userGoogleLogin(googleProvider)
             .then(result => {
-                console.log(result.user)
+
                 navigate(from, { replace: true })
 
             })
