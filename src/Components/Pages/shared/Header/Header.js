@@ -22,8 +22,9 @@ const Header = () => {
                 :
                 <div className='flex sm:flex-row flex-col'>
                     <Link className='mx-4 text-black btn-link no-underline font-bold text-xl' to='/'><li>Home</li></Link>
-                    <Link className='mx-4 text-black btn-link no-underline font-bold text-xl' to='/login'><li>Login</li></Link>
-                    <Link className='text-black btn-link no-underline font-bold text-xl' to='/allservices'><li>Services</li></Link>
+                    <Link className='mr-4 text-black btn-link no-underline font-bold text-xl' to='/login'><li>Login</li></Link>
+                    <Link className='mr-4 text-black btn-link no-underline font-bold text-xl' to='/allservices'><li>Services</li></Link>
+                    <Link className='text-black btn-link no-underline font-bold text-xl' to='/blogs'><li>Blogs</li></Link>
                 </div>
         }
 
