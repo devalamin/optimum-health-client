@@ -1,10 +1,13 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider';
 
 const Register = () => {
     const { createNewUser } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
 
+    const from = location.state?.from?.pathname || '/';
 
 
     const handleCreateAccount = (event) => {
@@ -17,7 +20,26 @@ const Register = () => {
 
         createNewUser(email, password)
             .then(result => {
-                const user = result.user
+                const user = result.user;
+
+                const currentUser = {
+                    email: user.email
+                }
+
+                // get JWT Token
+                fetch('https://optimum-health-server.vercel.app/jwt', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(currentUser)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        localStorage.setItem('optimumToken', data.token)
+
+                        navigate(from, { replace: true })
+                    })
 
                 form.reset();
             })
