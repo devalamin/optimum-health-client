@@ -1,7 +1,9 @@
 import React from 'react';
 import { toast, ToastContainer } from 'react-toastify';
+import { useSetTitle } from '../../../hooks/useSetTitle';
 
 const AddService = () => {
+    useSetTitle('Add Service');
 
     const handleAddingService = (event) => {
         event.preventDefault()

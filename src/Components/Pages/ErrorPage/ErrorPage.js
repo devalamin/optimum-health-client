@@ -1,6 +1,8 @@
 import React from 'react';
+import { useSetTitle } from '../../../hooks/useSetTitle';
 
 const ErrorPage = () => {
+    useSetTitle('404-error');
     return (
         <div className='sm:mt-20'>
             <div className="flex flex-col w-full lg:flex-row">

@@ -2,15 +2,16 @@ import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider';
+import { useSetTitle } from '../../../hooks/useSetTitle';
 
 const Login = () => {
     const { userLogin, userGoogleLogin } = useContext(AuthContext);
     const googleProvider = new GoogleAuthProvider();
     const location = useLocation();
     const navigate = useNavigate();
+    useSetTitle('Login');
 
     const from = location.state?.from?.pathname || '/';
-
 
     const handleUserLogin = (event) => {
         event.preventDefault();
@@ -67,8 +68,6 @@ const Login = () => {
 
                         navigate(from, { replace: true })
                     })
-
-
             })
             .catch(error => console.error(error))
     }

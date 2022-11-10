@@ -1,6 +1,8 @@
 import React from 'react';
+import { useSetTitle } from '../../../hooks/useSetTitle';
 
 const Blogs = () => {
+    useSetTitle('Blogs');
     return (
         <div>
             <div className='bg-gradient-to-r from-slate-500 to-cyan-700 my-10 p-10'>

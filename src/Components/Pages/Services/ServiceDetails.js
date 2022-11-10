@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider';
+import { useSetTitle } from '../../../hooks/useSetTitle';
 import ReviewForm from '../ReviewForm/ReviewForm';
 import ReviewRow from './UserReview/ReviewRow';
 
@@ -8,6 +9,7 @@ const ServiceDetails = () => {
     const { user } = useContext(AuthContext)
     const [reviews, setReviews] = useState([])
     const { service_name, price, description, _id, img } = useLoaderData();
+    useSetTitle('ServiceDetails');
 
 
     useEffect(() => {

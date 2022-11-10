@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
+import { useSetTitle } from '../../../hooks/useSetTitle';
 
 const UpdateReview = () => {
     const { _id, review, service_name } = useLoaderData();
     const [updateReview, setUpdateReview] = useState({});
+    useSetTitle('Update');
 
 
     const handleChange = event => {
