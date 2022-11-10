@@ -7,6 +7,7 @@ import MyReviewRow from './MyReviewRow';
 const MyReview = () => {
     const { user, userLogOut } = useContext(AuthContext);
     const [emailReview, setEmailReview] = useState([]);
+    // const [reviewLoader, setReviewLoader] = useState(true);
     useSetTitle('My Review');
 
 
@@ -19,12 +20,11 @@ const MyReview = () => {
             .then(res => {
                 if (res.status === 401 || res.status === 403) {
                     userLogOut()
-
                 }
-                return res.json()
+                return res.json();
             })
             .then(data => {
-                setEmailReview(data)
+                setEmailReview(data);
 
             })
 
@@ -43,18 +43,14 @@ const MyReview = () => {
                         const remaining = emailReview.filter(rvew => rvew._id !== id);
                         setEmailReview(remaining)
                     }
-
                 })
         }
-
     }
-
-
 
     return (
         <div>
             {
-                emailReview.length === 0 ? <div className='flex items-center justify-center sm:h-96 h-10'><span className='text-3xl font-bold text-teal-900'>You Have No Review</span></div>
+                emailReview.length === 0 ? <div className='flex items-center justify-center sm:h-96 h-10'><span className='text-3xl font-bold text-teal-900'><progress className="progress w-56"></progress></span></div>
                     :
                     <div className='my-10'>
                         <div className="overflow-x-auto w-full">
