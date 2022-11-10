@@ -50,13 +50,13 @@ const AddService = () => {
                                 <label className="label">
                                     <span className="label-text">Service Name</span>
                                 </label>
-                                <input name='service' type="text" placeholder="Service Name" className="input input-bordered" />
+                                <input name='service' type="text" placeholder="Service Name" className="input input-bordered" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Service Price</span>
                                 </label>
-                                <input name='price' type="text" placeholder="Service Price" className="input input-bordered" />
+                                <input name='price' type="text" placeholder="Service Price" className="input input-bordered" required />
                             </div>
 
 
@@ -65,12 +65,12 @@ const AddService = () => {
                                 <label className="label">
                                     <span className="label-text">Your Image Link</span>
                                 </label>
-                                <input name='photoLink' type="text" placeholder="image" className="input input-bordered" />
+                                <input name='photoLink' type="text" placeholder="image" className="input input-bordered" required />
 
                                 <label className="label">
                                     <span className="label-text">Description About This Service</span>
                                 </label>
-                                <textarea name='description' className="textarea textarea-accent" placeholder="Description"></textarea>
+                                <textarea name='description' className="textarea textarea-accent" placeholder="Description" required></textarea>
 
                             </div>
                             <div className="form-control mt-6">

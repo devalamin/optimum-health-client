@@ -61,7 +61,7 @@ const ReviewForm = ({ service_name, id }) => {
                                 <label className="label">
                                     <span className="label-text">Your Name</span>
                                 </label>
-                                <input name='name' type="text" placeholder="name" className="input input-bordered" />
+                                <input name='name' type="text" placeholder="name" className="input input-bordered" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
@@ -73,23 +73,23 @@ const ReviewForm = ({ service_name, id }) => {
                                 <label className="label">
                                     <span className="label-text">Your Phone</span>
                                 </label>
-                                <input name='phone' type="text" placeholder="phone" className="input input-bordered" />
+                                <input name='phone' type="text" placeholder="phone" className="input input-bordered" required />
                             </div>
 
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Your Image Link</span>
                                 </label>
-                                <input name='photoLink' type="text" placeholder="image" className="input input-bordered" />
+                                <input name='photoLink' type="text" placeholder="image" className="input input-bordered" required />
 
                                 <label className="label">
                                     <span className="label-text">Your Comment</span>
                                 </label>
-                                <textarea name='comments' className="textarea textarea-accent" placeholder="Your Comment Here"></textarea>
+                                <textarea name='comments' className="textarea textarea-accent" placeholder="Your Comment Here" required></textarea>
 
                             </div>
                             <div className="form-control mt-6">
-                                <button type='submit' className="btn btn-primary">Submit your review</button>
+                                <button type='submit' className="btn bg-gradient-to-r from-cyan-800 to-teal-800 border-0">Submit your review</button>
                             </div>
                         </form>
                     </div>
