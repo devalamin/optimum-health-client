@@ -50,7 +50,10 @@ const MyReview = () => {
     return (
         <div>
             {
-                emailReview.length === 0 ? <div className='flex items-center justify-center sm:h-96 h-10'><span className='text-3xl font-bold text-teal-900'><progress className="progress w-56"></progress></span></div>
+                emailReview.length === 0 ? <div className='flex items-center justify-center sm:h-96 h-10'><div>
+                    <span className='text-3xl font-bold text-teal-900'>You Have No Review</span>
+                    <div><progress className="progress w-56"></progress></div>
+                </div></div>
                     :
                     <div className='my-10'>
                         <div className="overflow-x-auto w-full">
